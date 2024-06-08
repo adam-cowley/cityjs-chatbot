@@ -110,7 +110,7 @@ export function talkSearchTool() {
       message: z.string(),
     }),
     func: async (input) => {
-      const chain = await initRetrievalChain();
+      const chain = await initTalksRetrievalChain();
       return chain.invoke({
         message: input.message,
       });

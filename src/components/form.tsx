@@ -1,4 +1,4 @@
-import { Message } from "@/hooks/chat";
+import { ChatMessage } from "@/hooks/chat";
 import {
   FormEvent,
   KeyboardEventHandler,
@@ -15,7 +15,7 @@ export default function Form({
   container,
 }: {
   onSubmit: (message: string) => void;
-  messages: Message[];
+  messages: ChatMessage[];
   thinking: boolean;
   container: RefObject<HTMLDivElement>;
 }) {

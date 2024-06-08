@@ -6,7 +6,6 @@ import { z } from "zod";
 import {
   ChatPromptTemplate,
   HumanMessagePromptTemplate,
-  MessagesPlaceholder,
   SystemMessagePromptTemplate,
 } from "@langchain/core/prompts";
 import {
@@ -104,7 +103,7 @@ export function talkSearchTool() {
       message: z.string(),
     }),
     func: async (input) => {
-      const chain = await initRetrievalChain();
+      const chain = await initSpeakerRetrievalChain();
       return chain.invoke({
         message: input.message,
       });
